@@ -1,0 +1,33 @@
+﻿@model loginProject.Models.loginclass
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    .st{
+        color:red;
+    }
+</style>
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post)) { 
+
+<div class="form-group">
+
+    <label>Email</label>
+    @Html.TextBoxFor(a=>a.Email,new { @class = "form-control", @placeholder = "enter the Email " })
+    <span class="st">@TempData["email"]</span>
+
+</div><div class="form-group">
+
+    <label>Password</label>
+    @Html.PasswordFor(a=>a.Password,new { @class = "form-control", @placeholder = "enter the Email " })
+    <span class="st">@TempData["pass"]</span>
+</div>
+
+<button type="submit" class="btn btn-success">Login</button>
+
+
+
+
+}
